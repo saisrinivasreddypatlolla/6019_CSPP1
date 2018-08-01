@@ -1,8 +1,6 @@
-varA = input("enter first number")
-varB = input("enter second number")
-x = type(varA)
-y = type(varB)
-if x == "str" or y == "str":
+varA = int(10)
+varB = "nivas"
+if varA == "nivas" or varB == "nivas":
 	print("string involved")
 elif varA > varB:
 	print("bigger")
