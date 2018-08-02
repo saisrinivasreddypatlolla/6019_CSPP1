@@ -20,17 +20,17 @@ def main():
     """This program is used to print longest alphabetical sequence to the given string"""
     str_val = input()
     end_val = 0
-    count_val1 = 0
+    count_valb = 0
     count_val = 0
     for char_val in range(len(str_val)-1):
         if str_val[char_val] <= str_val[char_val+1]:
             count_val += 1
-            if count_val > count_val1:
-                count_val1 = count_val
+            if count_val > count_valb:
+                count_valb = count_val
                 end_val = char_val+1
         else:
             count_val = 0
-    str_val1 = end_val - count_val1
-    print(str_val[str_val1+1])
-    if __name__ == "__main__":
-        main()
+    str_vala = end_val - count_valb
+    print(str_val[str_vala:end_val+1])
+if __name__ == "__main__":
+    main()
