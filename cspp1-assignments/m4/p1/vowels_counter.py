@@ -9,9 +9,9 @@ For example, if s = 'azcbobobegghakl', your program should print:
 def main():
     ''' thisprogram is used to check vowels count in given string'''
 
-    STR = input()
+str_value = input()
 COUNT = 0
-for char in STR:
+for char in str_value:
     if char in ('a', 'e', 'i', 'o', 'u'):
         COUNT += 1
 print(COUNT)
