@@ -1,6 +1,6 @@
-a = 10
+"""this program is used to print even usin while"""
+A = 10
 print("Hello!")
-while a >= 2:
-	print("print",a)
-	a -= 2
-	
+while A >= 2:
+    print("print", A)
+    A -= 2
