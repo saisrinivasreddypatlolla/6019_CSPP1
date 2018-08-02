@@ -7,11 +7,11 @@ Number of times bob occurs is: 2'''
 
 def main():
     ''' this program is used to print the bob count in a given string'''
-    STR_VAL = input()
-    COUNT_VAL = 0
-    for CHAR_VAL in range(len(STR_VAL) - 2):
-        if STR_VAL[CHAR_VAL] == 'b' and STR_VAL[CHAR_VAL+1] == 'o' and STR_VAL[CHAR_VAL+2] == 'b':
-            COUNT_VAL += 1
-    print(COUNT_VAL)
+    str_val = input()
+    count_val = 0
+    for char_val in range(len(str_val) - 2):
+        if str_val[char_val] == 'b' and str_val[char_val+1] == 'o' and str_val[char_val+2] == 'b':
+            count_val += 1
+    print(count_val)
 if __name__ == "__main__":
     main()
