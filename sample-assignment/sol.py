@@ -6,7 +6,7 @@
 # This function takes in one number and returns one number.
 '''
 def main():
-	'''the program is used to test'''
+    '''the program is used to test'''
     data = input()
     print(int(data[0])+int(data[1]))
 
