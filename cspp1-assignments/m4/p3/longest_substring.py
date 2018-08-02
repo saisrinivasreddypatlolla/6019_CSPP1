@@ -32,5 +32,5 @@ def main():
             count_val = 0
     str_val1 = end_val - count_val1
     print(str_val[str_val1+1])
-if __name__ == "__main__":
-    main()
+    if __name__ == "__main__":
+        main()
