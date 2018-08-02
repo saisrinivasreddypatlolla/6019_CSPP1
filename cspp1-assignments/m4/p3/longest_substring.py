@@ -16,19 +16,19 @@ If you have time, come back to this problem after you've had a break and cleared
 
 def main():
     """This program is used to print longest alphabetical sequence to the given string"""
-    STR = input("enter string ")
-    S = 0
-    COUNT1 = 0
-    COUNT = 0
-    for i in range(len(STR)-1):
-        if STR[i] <= STR[i+1]:
-            COUNT += 1
-            if COUNT > COUNT1:
-                COUNT1 = COUNT
-                S = i+1
+    str_val = input()
+    end_val = 0
+    count_val1 = 0
+    count_val = 0
+    for char_val in range(len(str_val)-1):
+        if str_val[char_val] <= str_val[char_val+1]:
+            count_val += 1
+            if count_val > count_val1:
+                count_val1 = count_val
+                end_val = char_val+1
         else:
-            COUNT = 0
-    STR1 = S - COUNT1
-    print(STR[STR1:S+1])
+            count_val = 0
+    str_val1 = end_val - count_val1
+    print(str_val[str_val1:+1])
 if __name__ == "__main__":
     main()
