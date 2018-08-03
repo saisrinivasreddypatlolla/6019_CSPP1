@@ -10,7 +10,8 @@
 # output: 6.999999999999991
 '''
 def main():
-    ''' this program is used to print the squareroot value of the given number using bi-section method'''
+    ''' this program is used to print the squareroot value of
+    the given number using bi-section method'''
     num_val = int(input())
     epsilon = 0.01
     low = 0
