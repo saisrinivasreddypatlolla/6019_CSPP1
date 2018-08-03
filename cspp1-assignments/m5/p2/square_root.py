@@ -10,10 +10,10 @@
 # output: 6.999999999999991'''
 
 def main():
-	    '''this program is used to check given number is perfect square or not'''
+        '''this program is used to check given number is perfect square or not'''
     num_val = int(input())
     guess = 0
-    epsilon = 0.1
+    epsilon = 0.01
     inc = 0.1
     num_a = 0
     while guess < num_val:
@@ -22,13 +22,9 @@ def main():
         guess = guess+inc
         num_a += 1
     if abs(guess**2-num_val) >= epsilon:
-        print(num_val, 'is not a perfect square')
+        print(num_val)
     else:
-        print(num_val, 'is a perfect square')
+        print(num_val)
 
 if __name__ == "__main__":
     main()
-
-
-if __name__== "__main__":
-	main()
