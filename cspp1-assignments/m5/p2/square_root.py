@@ -11,7 +11,7 @@
 
 def main():
         '''this program is used to check given number is perfect square or not'''
-    num_val = int(input())
+    num_val = input()
     guess = 0
     epsilon = 0.01
     inc = 0.1
