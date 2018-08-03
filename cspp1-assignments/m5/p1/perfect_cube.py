@@ -13,7 +13,7 @@ def main():
     '''# input is captured in s
     # watch out for the data type of value stored in s
     # your code starts here'''
-    num_val = int(input(" enter number"))
+    num_val = int(input())
     guess = 0
     epsilon = 0.1
     inc = 0.1
@@ -29,5 +29,5 @@ def main():
         print(num_val, 'is a perfect cube')
 
 
-if __name__== "__main__":
+if __name__ == "__main__":
     main()
