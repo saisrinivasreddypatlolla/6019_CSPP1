@@ -11,6 +11,7 @@ def main():
     num_val = int(input())
     rem_val = 0
     pro_val = 1
+    flag = 0
     if num_val <= 0:
         flag = 1
         num_val = abs(num_val)
