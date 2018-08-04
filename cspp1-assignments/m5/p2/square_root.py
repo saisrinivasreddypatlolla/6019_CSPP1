@@ -26,5 +26,5 @@ def main():
     else:
         print(guess)
 
-if __name__ == "__main__":
+if __name__  == "__main__":
     main()

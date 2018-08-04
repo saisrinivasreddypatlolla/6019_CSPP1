@@ -1,7 +1,7 @@
 #Guess My Number Exercise
 
 def main():
-	#your code here
+	''' this program is used to print the given number is perfect cube or not'''
 	num = input("please think of a number between 1 to 100 and click enter")
 	print(" enter h if the given number is greater than your number , l if the given less tahn your number, else c then if it equals to your number")
 	print("is your  number 50?")
