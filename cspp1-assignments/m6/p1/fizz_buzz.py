@@ -11,15 +11,15 @@ def main():
     num_val = int(input())
     if num_val <= 0:
         print()
-    for n in range(1,num_val+1):
-        if(n%3 == 0 and n%5 == 0):
+    for num_vala in range(1,num_val+1):
+        if(num_vala%3 == 0 and num_vala%5 == 0):
             print("Fizz")
             print("Buzz")
-        elif(n%3 == 0):
+        elif num_vala%3 == 0:
             print("Fizz")
-        elif(n%5 == 0):
+        elif num_vala%5 == 0:
             print("Buzz")
         else:
-            print(n)
+            print(num_vala)
 if __name__ == "__main__":
     main()
