@@ -5,7 +5,7 @@ Output has three spaces, which are to be replaced with these special characters
 '''
 def main():
     '''
-    Read string from the input, store it in variable str_input.
+    this program is used to print the special caracters with " ".
     '''
     str_input = input()
     str_valb = "!@#$%^&*"
