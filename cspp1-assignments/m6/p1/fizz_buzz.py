@@ -9,18 +9,17 @@ def main():
     Read number from the input, store it in variable num.
     '''
     num_val = int(input())
-    sti_val = ""
     if num_val <= 0:
         print()
     for n in range(1,num_val+1):
         if(n%3 == 0 and n%5 == 0):
-            sti_val += "FizzBuzz"
+            print("Fizz")
+            print("Buzz")
         elif(n%3 == 0):
-            sti_val += "Fizz"
+            print("Fizz")
         elif(n%5 == 0):
-            sti_val += "Buzz"
+            print("Buzz")
         else:
-            sti_val += str(n)
-    print(sti_val)
+            print(n)
 if __name__ == "__main__":
     main()
