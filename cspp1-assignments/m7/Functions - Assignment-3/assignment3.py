@@ -12,7 +12,7 @@ def payingdebt_offin_a_year(balance, annual_interest_rate):
     monthly_payment_lowerbound = previous_balance/12
     monthly_payment_upperbound = (previous_balance*(1+monthly_interest_rate)**12)/12.0
     epsilon = 0.03
-    while abs(balance)> epsilon:
+    while abs(balance) > epsilon:
         monthly_payment = (monthly_payment_lowerbound+monthly_payment_upperbound)/2
         balance = previous_balance
         for _ in range(12):
@@ -25,11 +25,12 @@ def payingdebt_offin_a_year(balance, annual_interest_rate):
     return str(round(monthly_payment, 2))
 
 def main():
+    ''' this functon is used to print the lowest payment value'''
     data = input()
     # data = "4773 0.2"
     data = data.split(' ')
     data = list(map(float, data))
-    print("Lowest Payment:",payingdebt_offin_a_year(data[0], data[1]))
+    print("Lowest Payment:", payingdebt_offin_a_year(data[0], data[1]))
     
 if __name__ == "__main__":
     main()
