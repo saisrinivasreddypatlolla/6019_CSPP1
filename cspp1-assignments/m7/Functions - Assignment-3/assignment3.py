@@ -38,7 +38,22 @@
 
 
 def payingDebtOffInAYear(balance, annualInterestRate):
-
+	previous_balance = balance
+	monthly_interest_rate = annualInterestRate/12
+	monthly_payment_lowerbound = previous_balance/12
+	monthly_payment_upperbound = (previous_balance*(1+monthly_interest_rate)**12)/12.0
+	epsilon = 0.03
+	while abs(balance)> epsilon:
+		monthly_payment = (monthly_payment_lowerbound+monthly_payment_upperbound)/2
+		balance = previous_balance
+		for _ in range(12):
+			Monthly_unpaid_balance = (balance) - (monthly_payment)
+			balance = (Monthly_unpaid_balance) + (monthly_interest_rate * Monthly_unpaid_balance)
+		if balance > epsilon:
+			monthly_payment_lowerbound = monthly_payment
+		elif balance < -epsilon:
+			monthly_payment_upperbound = monthly_payment
+	return str(round(monthly_payment,2))
 
 def main():
     data = input()
