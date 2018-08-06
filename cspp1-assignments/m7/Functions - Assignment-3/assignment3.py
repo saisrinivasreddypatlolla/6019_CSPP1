@@ -4,11 +4,11 @@
 
 
 
-def payingDebtOffInAYear(balance, annualInterestRate):
+def payingdebt_offin_a_year(balance, annual_interest_rate):
     '''input 320000 0.2
     output: 29157.09'''
     previous_balance = balance
-    monthly_interest_rate = annualInterestRate/12
+    monthly_interest_rate = annual_interest_rate/12
     monthly_payment_lowerbound = previous_balance/12
     monthly_payment_upperbound = (previous_balance*(1+monthly_interest_rate)**12)/12.0
     epsilon = 0.03
@@ -16,20 +16,20 @@ def payingDebtOffInAYear(balance, annualInterestRate):
         monthly_payment = (monthly_payment_lowerbound+monthly_payment_upperbound)/2
         balance = previous_balance
         for _ in range(12):
-            Monthly_unpaid_balance = (balance) - (monthly_payment)
-            balance = (Monthly_unpaid_balance) + (monthly_interest_rate * Monthly_unpaid_balance)
+            monthly_unpaid_balance = (balance) - (monthly_payment)
+            balance = (monthly_unpaid_balance) + (monthly_interest_rate * monthly_unpaid_balance)
         if balance > epsilon:
             monthly_payment_lowerbound = monthly_payment
         elif balance < -epsilon:
             monthly_payment_upperbound = monthly_payment
-    return str(round(monthly_payment,2))
+    return str(round(monthly_payment, 2))
 
 def main():
     data = input()
     # data = "4773 0.2"
     data = data.split(' ')
     data = list(map(float, data))
-    print("Lowest Payment:",payingDebtOffInAYear(data[0], data[1]))
+    print("Lowest Payment:",payingdebt_offin_a_year(data[0], data[1]))
     
 if __name__ == "__main__":
     main()
