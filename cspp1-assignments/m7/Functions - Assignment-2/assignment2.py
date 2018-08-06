@@ -27,7 +27,7 @@ def paying_debt_offin_a_year(balance, annual_interest_rate):
     '''input 3329 0.2
     output 310'''
     previous_balance = balance
-    assume_val = 180
+    assume_val = 10
     if balance <= 0:
         return 0
     while balance > 0:
