@@ -25,27 +25,27 @@
 # Updated balance each month = (Monthly unpaid balance) + (Monthly interest rate x Monthly unpaid balance)
 '''
 
-def paying_debt_off_in_a_year(balance, annualInterestRate, monthlyPaymentRate):
-	''' input : 42 0.2 0.04
-	output: 31.38'''
-	previous_balance = balance
-	for _ in range(12):
-		monthly_intrest_rate = (annualInterestRate/12.0)
-		minimum_monthly_payment = (monthlyPaymentRate * previous_balance)
-		monthly_unpaid_balance = previous_balance - minimum_monthly_payment
-		updated_balance_each_month = monthly_unpaid_balance + (monthly_intrest_rate*monthly_unpaid_balance)
-		previous_balance = updated_balance_each_month
-	return round(updated_balance_each_month,2)
-	
+def paying_debt_off_in_a_year(balance, annual_interest_rate, monthly_payment_rate):
+    ''' input : 42 0.2 0.04
+    output: 31.38'''
+    previous_balance = balance
+    for _ in range(12):
+        monthly_intrest_rate = (annual_interest_rate/12.0)
+        minimum_monthly_payment = (monthly_payment_rate * previous_balance)
+        monthly_unpaid_balance = previous_balance - minimum_monthly_payment
+        updated_balance_each_month = monthly_unpaid_balance + (monthly_intrest_rate*monthly_unpaid_balance)
+        previous_balance = updated_balance_each_month
+    return round(updated_balance_each_month,2)
+    
 
 
 def main():
-	'''this program is used to print the remaining balance of credit card after one year'''
-	data = input()
-	data = data.split(' ')
-	data = list(map(float, data))
-	print(payingDebtOffInAYear(data[0],data[1],data[2]))
+    '''this program is used to print the remaining balance of credit card after one year'''
+    data = input()
+    data = data.split(' ')
+    data = list(map(float, data))
+    print(paying_debt_off_in_a_year(data[0],data[1],data[2]))
 
 if __name__ == "__main__":
-	main()
+    main()
 
