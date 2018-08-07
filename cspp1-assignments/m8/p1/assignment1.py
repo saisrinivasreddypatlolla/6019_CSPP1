@@ -13,7 +13,7 @@ def factorial(number):
     returns: a positive integer, the factorial of n.
     '''
     # Your code here
-    if number in (1,0):
+    if number in (1, 0):
         return 1
     return number*factorial(number-1)
 
