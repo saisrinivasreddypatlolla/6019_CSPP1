@@ -1,10 +1,9 @@
-'''
 # Exercise: Assignment-2
-# Write a Python function, sumofdigits, that takes in one number and
-returns the sum of digits of given number.
-# This function takes in one number and returns one number.'''
-import sys
-sys.setrecursionlimit(15000)
+# Write a Python function, sumofdigits, that takes in one number and returns the sum of digits of given number.
+
+# This function takes in one number and returns one number.
+
+
 def sumofdigits(number):
     '''
     n is positive Integer
@@ -18,9 +17,9 @@ def sumofdigits(number):
 
 
 def main():
-    ''' this program is used to print sum of digits in number'''
     answer = input()
-    print(sumofdigits(int(answer)))
+    print(sumofdigits(int(answer)))  
 
-if __name__ == "__main__":
+if __name__== "__main__":
     main()
+
