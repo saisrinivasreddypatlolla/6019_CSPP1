@@ -14,13 +14,13 @@ def factorial(number):
     '''
     # Your code here
     if number == 0 or number == 1:
-    	return 1
+        return 1
     return number*factorial(number-1)
     
 
 
 def main():
-	'''this program is used to print factorial of number using recursion'''
+    '''this program is used to print factorial of number using recursion'''
     answer = input()
     print(factorial(int(answer)))
 
