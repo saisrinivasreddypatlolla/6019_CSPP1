@@ -22,7 +22,7 @@ def factorial(number):
 def main():
 	'''this program is used to print factorial of number using recursion'''
     answer = input()
-    print(factorial(int(answer)))    
+    print(factorial(int(answer)))
 
 if __name__ == "__main__":
     main()
