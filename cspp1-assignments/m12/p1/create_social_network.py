@@ -56,8 +56,7 @@ def create_social_network(data):
                 dictionary[key_in_dictionary[0]] = values_in_dictionaries
         return dictionary
 
-    
-    
+
 
 def main():
     '''
