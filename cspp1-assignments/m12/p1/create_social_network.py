@@ -39,7 +39,7 @@ def create_social_network(data):
     temp_list_two = []
     if '\n' not in data:
         return dictionary
-     input_string = data.splitlines()
+    input_string = data.splitlines()
     for followers in input_string:
         temp_list_one.append(followers.split(" follows "))
     for following in temp_list_one:
