@@ -41,7 +41,7 @@ def delete_person(network, arg1):
         update the network dictionary and return it
     '''
     if arg1 in network.keys():
-        network[arg1].delete()
+        del network[arg1]
     return network
 def main():
     '''
