@@ -50,7 +50,7 @@ def create_social_network(data):
         for index_of_list in range(0, len(temp_list_two), 2):
             key_in_dictionary = temp_list_two[index_of_list]
             values_in_dictionaries = temp_list_two[index_of_list+1]
-             if key_in_dictionary[0] in dictionary.keys():
+            if key_in_dictionary[0] in dictionary.keys():
                 dictionary.append(key_in_dictionary, values_in_dictionaries)
             else:
                 dictionary[key_in_dictionary[0]] = values_in_dictionaries
