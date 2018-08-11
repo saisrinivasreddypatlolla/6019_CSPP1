@@ -88,7 +88,7 @@ def getAvailableLetters(lettersGuessed):
     returns: string, comprised of letters that represents what letters have not
       yet been guessed.
     '''
-    string = "abcdefghijklmnopqrstuvwexy"
+    string = "abcdefghijklmnopqrstuvwxyz"
     string = list(string)
     for letters_in_string in lettersGuessed:
         if letters_in_string in lettersGuessed:
@@ -121,7 +121,7 @@ def hangman(secretWord):
     lettersGuessed = []
     guess_chances = 8
     win_flag = 0
-    while(guess_chances > 0 and win_flag != 1):
+    while(guess_chances > 0 and win_flag == 0):
         print("-------------------------------------------------------------------")
         print("you have", str(guess_chances),"left")
         print("available letters:", getAvailableLetters(lettersGuessed))

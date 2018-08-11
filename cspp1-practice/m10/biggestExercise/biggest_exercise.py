@@ -12,11 +12,9 @@ def biggest(aDict):
     key_value = []
     for key in aDict.keys():
         length_key = len(aDict[key])
-        if length_key == count:
+        if length_key >= count:
             count = length_key
             key_value += [key]
-        if length_key > count:
-            key_value = [key]
     return key_value
 
 
