@@ -30,6 +30,9 @@ def unfollow(network, arg1, arg2):
     if arg1 in network.keys():
         if arg2 in network[arg1]:
             network[arg1].remove(arg2)
+    if arg2 in network.keys():
+        if arg1 in network[arg2]:
+            network[arg2].remove(arg1)
     return network
     
 def delete_person(network, arg1):
@@ -43,6 +46,9 @@ def delete_person(network, arg1):
         update the network dictionary and return it
     '''
     if arg1 in network.keys():
+        for i in network.keys():
+            if arg1 in network[i]:
+                network[i].remove(arg1)
         del network[arg1]
     return network
 def main():
