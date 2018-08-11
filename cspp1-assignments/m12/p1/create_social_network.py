@@ -37,7 +37,7 @@ def create_social_network(data):
     values_in_dictionaries = []
     dictionary = {}
     temp_list_two = []
-    if "\n" not in data:
+    if len(data) < 20:
         return dictionary
     input_string = data.splitlines()
     for followers in input_string:
