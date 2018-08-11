@@ -40,21 +40,23 @@ def create_social_network(data):
     input_string = data.splitlines()
     if "follows" not in input_string:
         return dictionary
-    for followers in input_string:
-        temp_list_one.append(followers.split(" follows "))
-    for following in temp_list_one:
-        for index_of_follwing in range(len(following)):
-            temp_list_two.append(following[index_of_follwing].split(','))
+    else:
+        for followers in input_string:
+            temp_list_one.append(followers.split(" follows "))
+        for following in temp_list_one:
+            for index_of_follwing in range(len(following)):
+                temp_list_two.append(following[index_of_follwing].split(','))
     
-    for index_of_list in range(0, len(temp_list_two), 2):
-        key_in_dictionary = temp_list_two[index_of_list]
-        values_in_dictionaries = temp_list_two[index_of_list+1]
-        if key_in_dictionary[0] in dictionary.keys():
-            dictionary.append(key_in_dictionary, values_in_dictionaries)
-        else:
-            dictionary[key_in_dictionary[0]] = values_in_dictionaries
-    return dictionary
+        for index_of_list in range(0, len(temp_list_two), 2):
+            key_in_dictionary = temp_list_two[index_of_list]
+            values_in_dictionaries = temp_list_two[index_of_list+1]
+             if key_in_dictionary[0] in dictionary.keys():
+                dictionary.append(key_in_dictionary, values_in_dictionaries)
+            else:
+                dictionary[key_in_dictionary[0]] = values_in_dictionaries
+        return dictionary
 
+    
     
 
 def main():
