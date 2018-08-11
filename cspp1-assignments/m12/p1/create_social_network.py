@@ -43,7 +43,7 @@ def create_social_network(data):
     for followers in input_string:
         temp_list_one.append(followers.split(" follows "))
     for following in temp_list_one:
-        for index_of_follwing in enumerate(following):
+        for index_of_follwing in range(len(following)):
             temp_list_two.append(following[index_of_follwing].split(','))
 
     for index_of_list in range(0, len(temp_list_two), 2):
