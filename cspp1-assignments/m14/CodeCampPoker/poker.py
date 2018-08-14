@@ -56,8 +56,7 @@ def is_flush(hand):
             count += 1
     if count == len(hand):
         return True
-    return False
-         
+    return False  
 
 def hand_rank(hand):
     '''
