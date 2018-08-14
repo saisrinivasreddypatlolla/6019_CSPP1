@@ -22,11 +22,16 @@ def get_word_score(word, n):
     n: integer (HAND_SIZE; i.e., hand size required for additional points)
     returns: int >= 0
     """
-    sum = 0
+    sum_of_alphabet_values = 0
+    word_score = 0
     for i in word:
         if i in SCRABBLE_LETTER_VALUES:
-            sum += SCRABBLE_LETTER_VALUES[i]
-    return sum*len(word)
+            sum_of_alphabet_values += SCRABBLE_LETTER_VALUES[i]
+    if len(word) == n:
+        word_score = (sum_of_alphabet_values*len(word))+50
+    else:
+        word_score = sum_of_alphabet_values*len(word)
+    return word_score
     
 
 

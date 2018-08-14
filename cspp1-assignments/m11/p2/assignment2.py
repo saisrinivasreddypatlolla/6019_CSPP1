@@ -18,8 +18,12 @@ def updateHand(hand, word):
     hand: dictionary (string -> int)    
     returns: dictionary (string -> int)
     """
-    for i in word:
-        hand[i] -= 1
+    for alphabets in word:
+        if alphabets in hand.keys():
+            if hand[alphabets] == 0:
+                hand[alphabets] = 0
+            else:
+                hand[alphabets] -= 1
     return hand
     
 
