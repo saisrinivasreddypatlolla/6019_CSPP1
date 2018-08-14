@@ -18,9 +18,9 @@ def is_straight(hand):
     count = 0
     for card_in_hand in hand:
         if card_in_hand[0] == 'A':
-           temporary_list_for_high_values.append(14) 
+            temporary_list_for_high_values.append(14)
         elif card_in_hand[0] == 'K':
-           temporary_list_for_high_values.append(13)
+            temporary_list_for_high_values.append(13)
         elif card_in_hand[0] == 'Q':
             temporary_list_for_high_values.append(12)
         elif card_in_hand[0] == 'J':
@@ -51,7 +51,7 @@ def is_flush(hand):
     '''
     suite_of_card = hand[0][1]
     count = 1
-    for card in range(1,len(hand)):
+    for card in range(1, len(hand)):
         if suite_of_card == hand[card][1]:
             count += 1
     if count == len(hand):
