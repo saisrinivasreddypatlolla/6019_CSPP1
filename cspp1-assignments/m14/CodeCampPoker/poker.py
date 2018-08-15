@@ -72,7 +72,7 @@ def is_full_house(hand):
     value_list = sorted(high_values(hand))
     if (value_list[0] == value_list[1] == value_list[2]) and (value_list[3] == value_list[4]):
         return True
-    elif (value_list[0] == value_list[1]) and (value_list[2] == value_list[3] == value_list[4]):
+    if (value_list[0] == value_list[1]) and (value_list[2] == value_list[3] == value_list[4]):
         return True
     return False
 
