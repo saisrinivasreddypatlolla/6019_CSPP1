@@ -3,19 +3,41 @@
     Read about poker hands here.
     https://en.wikipedia.org/wiki/List_of_poker_hands
 '''
+def is_four_of_kind(hand):
+    #value_list = high_values(hand)
+    sorted_list = sorted(high_values(hand))
+    set_sorted_list = set(sorted_list)
+    if len(sorted_list) - len(set_sorted_list) == 3:
+        return True
+    return False
+def is_three_of_kind(hand):
+    value_list = sorted(high_values(hand))
+    for i in range(len(value_list)-2):
+        if value_list[i] == value_list[i+1] == value_list[i+2]:
+            return True
+    return False
+def is_one_pair(hand):
+    value_list = sorted(high_values(hand))
+    set_sorted_list = set(value_list)
+    if len(value_list)-len(set_sorted_list) == 1:
+        return True
+    return False
+def is_two_pair(hand):
+    value_list = sorted(high_values(hand))
+    set_sorted_list = set(value_list)
+    if len(value_list) - len(set_sorted_list) == 2:
+        return True
+    return False
+def is_full_house(hand):
+    value_list = sorted(high_values(hand))
+    if (value_list[0] == value_list[1] == value_list[2]) and (value_list[3] == value_list[4]):
+        return True
+    elif (value_list[0] == value_list[1]) and (value_list[2] == value_list[3] == value_list[4]):
+        return True
+    return False
 
-def is_straight(hand):
-    '''
-        How do we find out if the given hand is a straight?
-        The hand has a list of cards represented as strings.
-        There are multiple ways of checking if the hand is a straight.
-        Do we need both the characters in the string? No.
-        The first character is good enough to determine a straight
-        Think of an algorithm: given the card face value how to check if it a straight
-        Write the code for it and return True if it is a straight else return False
-    '''
+def high_values(hand):
     temporary_list_for_high_values = []
-    count = 0
     for card_in_hand in hand:
         if card_in_hand[0] == 'A':
             temporary_list_for_high_values.append(14)
@@ -29,13 +51,28 @@ def is_straight(hand):
             temporary_list_for_high_values.append(10)
         else:
             temporary_list_for_high_values.append(int(card_in_hand[0]))
+    return temporary_list_for_high_values
+
+def is_straight(hand):
+    '''
+        How do we find out if the given hand is a straight?
+        The hand has a list of cards represented as strings.
+        There are multiple ways of checking if the hand is a straight.
+        Do we need both the characters in the string? No.
+        The first character is good enough to determine a straight
+        Think of an algorithm: given the card face value how to check if it a straight
+        Write the code for it and return True if it is a straight else return False
+    '''
+    value_list = sorted(high_values(hand))
+    count = 0
+    
     #print(hand)
-    sorted_hand = sorted(temporary_list_for_high_values)
+    #sorted_hand = sorted(value_list)
     #print(sorted_hand)
-    for i in range(len(sorted_hand)-1):
-        if sorted_hand[i+1] - sorted_hand[i] == 1:
+    for i in range(len(value_list)-1):
+        if value_list[i+1] - value_list[i] == 1:
             count += 1
-    if count == len(sorted_hand)-1:
+    if count == len(value_list)-1:
         return True
     return False
 
@@ -82,12 +119,22 @@ def hand_rank(hand):
     # third would be a straight with the return value 1
     # any other hand would be the fourth best with the return value 0
     # max in poker function uses these return values to select the best hand
-    if is_flush(hand) and is_straight(hand):
-        return 3
-    if is_straight(hand):
-        return 1
-    if is_flush(hand):
+    if is_full_house(hand):
+        return 7
+    if is_two_pair(hand):
         return 2
+    if is_one_pair(hand):
+        return 1
+    if is_three_of_kind(hand):
+        return 3
+    if is_four_of_kind(hand):
+        return 4
+    if is_flush(hand) and is_straight(hand):
+        return 8
+    if is_straight(hand):
+        return 5
+    if is_flush(hand):
+        return 6
     return 0
 
 def poker(hands):
