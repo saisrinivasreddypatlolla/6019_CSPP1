@@ -5,30 +5,70 @@
 '''
 def is_four_of_kind(hand):
     #value_list = high_values(hand)
+    '''
+        How do we find out if the given hand is a four of kind?
+        The hand has a list of cards represented as strings.
+        Do we need both the characters in the string? No.
+        The first character is good enough to determine a four of kind
+        Think of an algorithm: given the card suite how to check if it is a four of kind
+        Write the code for it and return True if it is a four of kind else return False
+    '''
     sorted_list = sorted(high_values(hand))
     set_sorted_list = set(sorted_list)
     if len(sorted_list) - len(set_sorted_list) == 3:
         return True
     return False
 def is_three_of_kind(hand):
+    '''
+        How do we find out if the given hand is a three of kind?
+        The hand has a list of cards represented as strings.
+        Do we need both the characters in the string? No.
+        The first character is good enough to determine a three of kind
+        Think of an algorithm: given the card suite how to check if it is a three of kind
+        Write the code for it and return True if it is a three of kind else return False
+    '''
     value_list = sorted(high_values(hand))
     for i in range(len(value_list)-2):
         if value_list[i] == value_list[i+1] == value_list[i+2]:
             return True
     return False
 def is_one_pair(hand):
+    '''
+        How do we find out if the given hand is a one pair?
+        The hand has a list of cards represented as strings.
+        Do we need both the characters in the string? No.
+        The first character is good enough to determine a one pair
+        Think of an algorithm: given the card suite how to check if it is a one pair
+        Write the code for it and return True if it is a one pair else return False
+    '''
     value_list = sorted(high_values(hand))
     set_sorted_list = set(value_list)
     if len(value_list)-len(set_sorted_list) == 1:
         return True
     return False
 def is_two_pair(hand):
+    '''
+        How do we find out if the given hand is a two pair?
+        The hand has a list of cards represented as strings.
+        Do we need both the characters in the string? No.
+        The first character is good enough to determine a two pair
+        Think of an algorithm: given the card suite how to check if it is a two pair
+        Write the code for it and return True if it is a two pair else return False
+    '''
     value_list = sorted(high_values(hand))
     set_sorted_list = set(value_list)
     if len(value_list) - len(set_sorted_list) == 2:
         return True
     return False
 def is_full_house(hand):
+    '''
+        How do we find out if the given hand is a full house?
+        The hand has a list of cards represented as strings.
+        Do we need both the characters in the string? No.
+        The first character is good enough to determine a full house
+        Think of an algorithm: given the card suite how to check if it is a full house
+        Write the code for it and return True if it is a full house else return False
+    '''
     value_list = sorted(high_values(hand))
     if (value_list[0] == value_list[1] == value_list[2]) and (value_list[3] == value_list[4]):
         return True
@@ -37,6 +77,13 @@ def is_full_house(hand):
     return False
 
 def high_values(hand):
+    '''
+        How do we find high values of given hand?
+        The hand has a list of cards represented as strings
+        Do we need both carachters in the string? No.
+        The first character is good enough to find high values
+        Wrte the code for it and return list of face values of the given hand
+    '''
     temporary_list_for_high_values = []
     for card_in_hand in hand:
         if card_in_hand[0] == 'A':
@@ -93,7 +140,7 @@ def is_flush(hand):
             count += 1
     if count == len(hand):
         return True
-    return False
+    re turn False
 
 def hand_rank(hand):
     '''
@@ -119,23 +166,25 @@ def hand_rank(hand):
     # third would be a straight with the return value 1
     # any other hand would be the fourth best with the return value 0
     # max in poker function uses these return values to select the best hand
+    rank = 0
     if is_full_house(hand):
-        return 7
+        rank = 7
     elif is_two_pair(hand):
-        return 2
+        rank = 2
     elif is_one_pair(hand):
-        return 1
+        rank = 1
     elif is_three_of_kind(hand):
-        return 3
+        rank = 3
     elif is_four_of_kind(hand):
-        return 4
+        rank = 4
     elif is_flush(hand) and is_straight(hand):
-        return 8
+        rank = 8
     elif is_straight(hand):
-        return 5
+        rank = 5
     elif is_flush(hand):
-        return 6
-    return 0
+        rank = 6
+    rank = 0
+    return rank
 
 def poker(hands):
     '''
