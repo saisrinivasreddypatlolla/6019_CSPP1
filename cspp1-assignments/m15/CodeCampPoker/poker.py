@@ -165,7 +165,7 @@ def is_high_card(hand):
  #            temporary_list_for_high_values.append(0.10)
  #        else:
  #            temporary_list_for_high_values.append(float(card_in_hand[0])/100)
-    return max(sort(hand))/100
+    return max(high_values(hand))/100
 def hand_rank(hand):
     '''
         You will code this function. The goal of the function is to
