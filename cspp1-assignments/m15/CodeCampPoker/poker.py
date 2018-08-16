@@ -13,11 +13,18 @@ def is_four_of_kind(hand):
         Think of an algorithm: given the card suite how to check if it is a four of kind
         Write the code for it and return True if it is a four of kind else return False
     '''
+    new = []
     sorted_list = sorted(high_values(hand))
-    set_sorted_list = set(sorted_list)
-    if len(sorted_list) - len(set_sorted_list) == 3:
-        return True
-    return False
+    for i in value_list:
+        if value_list.count(i) == 4:
+            new.append(i)
+    if len(new) == 0:
+        return False
+    return (max(new)/100)+4
+    # set_sorted_list = set(sorted_list)
+    # if len(sorted_list) - len(set_sorted_list) == 3:
+    #     return True
+    # return False
 def is_three_of_kind(hand):
     '''
         How do we find out if the given hand is a three of kind?
@@ -27,11 +34,18 @@ def is_three_of_kind(hand):
         Think of an algorithm: given the card suite how to check if it is a three of kind
         Write the code for it and return True if it is a three of kind else return False
     '''
+    new = []
     value_list = sorted(high_values(hand))
-    for i in range(len(value_list)-2):
-        if value_list[i] == value_list[i+1] == value_list[i+2]:
-            return True
-    return False
+    for i in value_list:
+        if value_list.count(i) == 3:
+            new.append(i)
+    if len(new) == 0:
+        return False
+    return (max(new)/100)+3
+    # for i in range(len(value_list)-2):
+    #     if value_list[i] == value_list[i+1] == value_list[i+2]:
+    #         return True
+    # return False
 def is_one_pair(hand):
     '''
         How do we find out if the given hand is a one pair?
