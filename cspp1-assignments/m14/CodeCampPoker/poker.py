@@ -140,7 +140,22 @@ def is_flush(hand):
     if count == len(hand):
         return True
     return False
-
+def is_high_card(hand):
+    temporary_list_for_high_values = []
+    for card_in_hand in hand:
+        if card_in_hand[0] == 'A':
+            temporary_list_for_high_values.append(0.14)
+        elif card_in_hand[0] == 'K':
+            temporary_list_for_high_values.append(0.13)
+        elif card_in_hand[0] == 'Q':
+            temporary_list_for_high_values.append(0.12)
+        elif card_in_hand[0] == 'J':
+            temporary_list_for_high_values.append(0.11)
+        elif card_in_hand[0] == 'T':
+            temporary_list_for_high_values.append(0.10)
+        else:
+            temporary_list_for_high_values.append(float(card_in_hand[0])/100)
+    return max(set(sorted(temporary_list_for_high_values)))
 def hand_rank(hand):
     '''
         You will code this function. The goal of the function is to
@@ -181,7 +196,7 @@ def hand_rank(hand):
         return 5
     if is_flush(hand):
         return 6
-    return 0
+    return is_high_card(hand)
 
 def poker(hands):
     '''
