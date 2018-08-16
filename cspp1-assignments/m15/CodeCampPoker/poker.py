@@ -165,6 +165,14 @@ def is_flush(hand):
         return True
     return False
 def is_high_card(hand):
+    '''
+        How do we find out if the given hand is a high card?
+        The hand has a list of cards represented as strings.
+        Do we need both the characters in the string? No.
+        The first character is good enough to determine a high card
+        Think of an algorithm: given the card suite how to check if it is a high card
+        Write the code for it and return True if it is a high card else return False
+    '''
 	# temporary_list_for_high_values = []
  #    for card_in_hand in hand:
  #        if card_in_hand[0] == 'A':
