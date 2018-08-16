@@ -18,7 +18,7 @@ def is_four_of_kind(hand):
     for i in sorted_list:
         if sorted_list.count(i) == 4:
             new.append(i)
-    if len(new) == 0:
+    if not new:
         return False
     return (max(new)/100)+4
     # set_sorted_list = set(sorted_list)
@@ -39,7 +39,7 @@ def is_three_of_kind(hand):
     for i in value_list:
         if value_list.count(i) == 3:
             new.append(i)
-    if len(new) == 0:
+    if not new:
         return False
     return (max(new)/100)+3
     # for i in range(len(value_list)-2):
@@ -60,7 +60,7 @@ def is_one_pair(hand):
     for i in value_list:
         if value_list.count(i) == 2:
             new.append(i)
-    if len(new) == 0:
+    if not new:
         return False
     return (max(new)/100)+1
     # set_sorted_list = set(value_list)
@@ -96,7 +96,7 @@ def is_full_house(hand):
         new.append(value_list[0])
     if (value_list[0] == value_list[1]) and (value_list[2] == value_list[3] == value_list[4]):
         new.append(value_list[2])
-    if len(new) == 0:
+    if not new:
         return False
     return (max(new)/100)+7
 
