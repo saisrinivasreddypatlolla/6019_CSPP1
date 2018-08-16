@@ -141,7 +141,7 @@ def is_flush(hand):
         return True
     return False
 def is_high_card(hand):
-	temporary_list_for_high_values = []
+    temporary_list_for_high_values = []
     for card_in_hand in hand:
         if card_in_hand[0] == 'A':
             temporary_list_for_high_values.append(0.14)
