@@ -15,8 +15,8 @@ def is_four_of_kind(hand):
     '''
     new = []
     sorted_list = sorted(high_values(hand))
-    for i in value_list:
-        if value_list.count(i) == 4:
+    for i in sorted_list:
+        if sorted_list.count(i) == 4:
             new.append(i)
     if len(new) == 0:
         return False
