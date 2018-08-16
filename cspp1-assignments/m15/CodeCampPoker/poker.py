@@ -41,11 +41,18 @@ def is_one_pair(hand):
         Think of an algorithm: given the card suite how to check if it is a one pair
         Write the code for it and return True if it is a one pair else return False
     '''
+    new =[]
     value_list = sorted(high_values(hand))
-    set_sorted_list = set(value_list)
-    if len(value_list)-len(set_sorted_list) == 1:
-        return True
-    return False
+    for i in value_list:
+        if value_list.count(i) == 2:
+            new.append(i)
+    if len(new) == 0:
+        return False
+    return (max(new)/100)+1
+    # set_sorted_list = set(value_list)
+    # if len(value_list)-len(set_sorted_list) == 1:
+    #     return True
+    # return False
 def is_two_pair(hand):
     '''
         How do we find out if the given hand is a two pair?
@@ -69,12 +76,15 @@ def is_full_house(hand):
         Think of an algorithm: given the card suite how to check if it is a full house
         Write the code for it and return True if it is a full house else return False
     '''
+    new = []
     value_list = sorted(high_values(hand))
     if (value_list[0] == value_list[1] == value_list[2]) and (value_list[3] == value_list[4]):
-        return True
+        new.append(value_list[0])
     if (value_list[0] == value_list[1]) and (value_list[2] == value_list[3] == value_list[4]):
-        return True
-    return False
+        new.append(value_list[2])
+    if len(new) == 0:
+        return False
+    return (max(new)/100)+7
 
 def high_values(hand):
     '''
@@ -141,21 +151,21 @@ def is_flush(hand):
         return True
     return False
 def is_high_card(hand):
-    temporary_list_for_high_values = []
-    for card_in_hand in hand:
-        if card_in_hand[0] == 'A':
-            temporary_list_for_high_values.append(0.14)
-        elif card_in_hand[0] == 'K':
-            temporary_list_for_high_values.append(0.13)
-        elif card_in_hand[0] == 'Q':
-            temporary_list_for_high_values.append(0.12)
-        elif card_in_hand[0] == 'J':
-            temporary_list_for_high_values.append(0.11)
-        elif card_in_hand[0] == 'T':
-            temporary_list_for_high_values.append(0.10)
-        else:
-            temporary_list_for_high_values.append(float(card_in_hand[0])/100)
-    return max(temporary_list_for_high_values)
+	# temporary_list_for_high_values = []
+ #    for card_in_hand in hand:
+ #        if card_in_hand[0] == 'A':
+ #            temporary_list_for_high_values.append(0.14)
+ #        elif card_in_hand[0] == 'K':
+ #            temporary_list_for_high_values.append(0.13)
+ #        elif card_in_hand[0] == 'Q':
+ #            temporary_list_for_high_values.append(0.12)
+ #        elif card_in_hand[0] == 'J':
+ #            temporary_list_for_high_values.append(0.11)
+ #        elif card_in_hand[0] == 'T':
+ #            temporary_list_for_high_values.append(0.10)
+ #        else:
+ #            temporary_list_for_high_values.append(float(card_in_hand[0])/100)
+    return max(sort(hand))/100
 def hand_rank(hand):
     '''
         You will code this function. The goal of the function is to
@@ -181,11 +191,11 @@ def hand_rank(hand):
     # any other hand would be the fourth best with the return value 0
     # max in poker function uses these return values to select the best hand
     if is_full_house(hand):
-        return 7
+        return is_full_house(hand)
     if is_two_pair(hand):
         return 2
     if is_one_pair(hand):
-        return 1
+        return is_one_pair(hand)
     if is_three_of_kind(hand):
         return 3
     if is_four_of_kind(hand):
