@@ -43,7 +43,7 @@ def similarity(dict1, dict2):
             list_of_words_inputone.remove(word)
             #instead of len(word) > 0 i wrote word
     for word in temporary_list_two:
-        if word in load_stopwords(FILENAME) and len(word) > 0:
+        if word in load_stopwords(FILENAME) and word:
             list_of_words_inputtwo.remove(word)
             #instead of len(word) > 0 i wrote word
     # print(list_of_words_inputone)
