@@ -49,16 +49,16 @@ def similarity(dict1, dict2):
     # print(list_of_words_inputone)
     # print(list_of_words_inputtwo)
     for word in list_of_words_inputone:
-         if word not in dictionary_one:
+        if word not in dictionary_one:
             dictionary_one[word] = list_of_words_inputone.count(word)
     for word in list_of_words_inputtwo:
         if word not in dictionary_two:
             dictionary_two[word] = list_of_words_inputtwo.count(word)
     keys = set(list(dictionary_one.keys())+list(dictionary_two.keys()))
     frequency_words = {key:[0, 0] for key in keys}
-    for key in dictionary_one.keys():
+    for key in dictionary_one:
         frequency_words[key][0] = dictionary_one[key]
-    for key in dictionary_two.keys():
+    for key in dictionary_two:
         frequency_words[key][1] = dictionary_two[key]
     #print(frequency_words)
     sum_of_numerator = 0
