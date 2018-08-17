@@ -8,8 +8,8 @@ def similarity(dict1, dict2):
     '''
         Compute the document distance as given in the PDF
     '''
-    dictionary_for_input_one = {}
-    dictionary_for_input_two = {}
+    dictionary_one = {}
+    dictionary_two = {}
     characters = "'.,?!;:()-3"
     for character in characters:
         if character in dict1 or character in dict2:
@@ -39,35 +39,37 @@ def similarity(dict1, dict2):
     # print(temporary_list_one)
     # print(temporary_list_two)
     for word in temporary_list_one:
-        if word in load_stopwords(FILENAME) and len(word) > 0:
+        if word in load_stopwords(FILENAME) and word:
             list_of_words_inputone.remove(word)
+            #instead of len(word) > 0 i wrote word
     for word in temporary_list_two:
         if word in load_stopwords(FILENAME) and len(word) > 0:
             list_of_words_inputtwo.remove(word)
+            #instead of len(word) > 0 i wrote word
     # print(list_of_words_inputone)
     # print(list_of_words_inputtwo)
     for word in list_of_words_inputone:
-         if word not in dictionary_for_input_one.keys():
-            dictionary_for_input_one[word] = list_of_words_inputone.count(word)
+         if word not in dictionary_one:
+            dictionary_one[word] = list_of_words_inputone.count(word)
     for word in list_of_words_inputtwo:
-        if word not in dictionary_for_input_two.keys():
-            dictionary_for_input_two[word] = list_of_words_inputtwo.count(word)
-    keys = set(list(dictionary_for_input_one.keys())+list(dictionary_for_input_two.keys()))
-    frequency_words = {key:[0,0] for key in keys}
-    for key in dictionary_for_input_one.keys():
-        frequency_words[key][0] = dictionary_for_input_one[key]
-    for key in dictionary_for_input_two.keys():
-        frequency_words[key][1] = dictionary_for_input_two[key]
+        if word not in dictionary_two:
+            dictionary_two[word] = list_of_words_inputtwo.count(word)
+    keys = set(list(dictionary_one.keys())+list(dictionary_two.keys()))
+    frequency_words = {key:[0, 0] for key in keys}
+    for key in dictionary_one.keys():
+        frequency_words[key][0] = dictionary_one[key]
+    for key in dictionary_two.keys():
+        frequency_words[key][1] = dictionary_two[key]
     #print(frequency_words)
     sum_of_numerator = 0
-    sum_of_first_values = 0
-    sum_of_second_values = 0
+    sum_first = 0
+    sum_second = 0
     for keys in frequency_words.values():
         sum_of_numerator += keys[0]*keys[1]
-        sum_of_first_values += keys[0]**2
-        sum_of_second_values += keys[1]**2
-    frequency_for_given_input = sum_of_numerator/(math.sqrt(sum_of_first_values)*(math.sqrt(sum_of_second_values)))
-    return frequency_for_given_input
+        sum_first += keys[0]**2
+        sum_second += keys[1]**2
+    frequency = sum_of_numerator/(math.sqrt(sum_first)*(math.sqrt(sum_second)))
+    return frequency
 
     #print(frequency_words)
     #print(list_of_words_inputone,list_of_words_inputtwo)
