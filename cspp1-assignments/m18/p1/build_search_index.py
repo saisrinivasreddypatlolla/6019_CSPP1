@@ -20,7 +20,6 @@
         .
     }
 '''
-import re
 FILENAME = "stopwords.txt"
 # helper function to load the stop words from a file
 def load_stopwords(filename):
@@ -46,14 +45,14 @@ def word_list(text):
         if char in text:
             text = text.replace(char, '')
 
-    
+
     temp1 = text.lower().split()
     temp2 = list(temp1)
     #print(temp2)
     for word in temp2:
         if word in load_stopwords(FILENAME):
             temp1.remove(word)
-    
+
 
         #temp1.append(re.sub('[^a-zA-Z]','',word))
 
@@ -77,13 +76,13 @@ def build_search_index(docs):
     search_index = {}
     #print(docs)
     for line in range(len(docs)):
-        str1 = word_list(docs[line])
-        for word in str1:
+        updated_docs = word_list(docs[line])
+        for word in updated_docs:
             if word not in search_index.keys():
-                search_index[word] = [(line, str1.count(word))]
+                search_index[word] = [(line, updated_docs.count(word))]
             else:
-                if (line, str1.count(word)) not in search_index[word]:
-                    search_index[word].append((line, str1.count(word)))
+                if (line, updated_docs.count(word)) not in search_index[word]:
+                    search_index[word].append((line, updated_docs.count(word)))
 
     # for word in search_index:
     #     search_index[word] = set(search_index[word])
