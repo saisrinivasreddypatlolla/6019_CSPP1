@@ -45,7 +45,7 @@ def search(search_index, query):
         #print(search_index[word])
         if word in search_index:
             temporary_list_index.append(search_index[word])
-    return temporary_list_index        
+    return temporary_list_index
 
 def process_queries(search_index, queries):
     '''
@@ -64,7 +64,6 @@ def process_queries(search_index, queries):
                 #print(index)
                 list_for_final_values.append(word[index][0])
         print(set(list_for_final_values))
-    
 
 def main():
     '''
@@ -75,7 +74,7 @@ def main():
 
     # read the number of search queries
     lines = int(input())
-    
+
     # read the search queries into a list
     queries = []
     for index in range(lines):
