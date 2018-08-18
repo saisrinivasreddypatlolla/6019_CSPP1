@@ -20,7 +20,8 @@
         .
     }
 '''
-
+import re
+FILENAME = "stopwords.txt"
 # helper function to load the stop words from a file
 def load_stopwords(filename):
     '''
@@ -39,7 +40,33 @@ def word_list(text):
         Clean up the text by remvoing all the non alphabet characters
         return a list of words
     '''
-    return text.lower().split()
+    temp2 = []
+    characters = ".,';"
+    for char in characters:
+        if char in text:
+            text = text.replace(char, '')
+
+    
+    temp1 = text.lower().split()
+    temp2 = list(temp1)
+    #print(temp2)
+    for word in temp2:
+        if word in load_stopwords(FILENAME):
+            temp1.remove(word)
+    
+
+        #temp1.append(re.sub('[^a-zA-Z]','',word))
+
+    #temp1 = []
+    #temp1.append(re.sub('[^a-zA-Z]','',text))
+    # characters ="!@#$%^&*()_+':;?012346789*/-+"
+    #print(temp1)
+    # for word in text:
+    #     for character in characters:
+    #         if character in word:
+    #             word.replace(character, '')
+    # print(text)
+    return temp1
 
 def build_search_index(docs):
     '''
@@ -48,10 +75,22 @@ def build_search_index(docs):
 
     # initialize a search index (an empty dictionary)
     search_index = {}
-    for line in docs:
-        str1 = word_list(line)
-        print(str1)
+    #print(docs)
+    for line in range(len(docs)):
+        str1 = word_list(docs[line])
+        for word in str1:
+            if word not in search_index.keys():
+                search_index[word] = [(line, str1.count(word))]
+            else:
+                if (line, str1.count(word)) not in search_index[word]:
+                    search_index[word].append((line, str1.count(word)))
+
+    # for word in search_index:
+    #     search_index[word] = set(search_index[word])
+
+        #print(str1)
         #return str1.index(line)
+    #print(search_index)
 
     # iterate through all the docs
     # keep track of doc_id which is the list index corresponding the document
@@ -61,8 +100,7 @@ def build_search_index(docs):
 
         # add or update the words of the doc to the search index
 
-    # return search index
-    pass
+    return search_index
 
 # helper function to print the search index
 # use this to verify how the search index looks
