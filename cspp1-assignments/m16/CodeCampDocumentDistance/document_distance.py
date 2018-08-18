@@ -35,6 +35,7 @@ def similarity(dict1, dict2):
     #         temp2.append(i)
     # print(temp2)
     temporary_list_one = list(list_of_words_inputone)
+    #temporary_list_one = list_of_words_inputone[:]
     temporary_list_two = list(list_of_words_inputtwo)
     # print(temporary_list_one)
     # print(temporary_list_two)
@@ -46,8 +47,8 @@ def similarity(dict1, dict2):
         if word in load_stopwords(FILENAME) and word:
             list_of_words_inputtwo.remove(word)
             #instead of len(word) > 0 i wrote word
-    # print(list_of_words_inputone)
-    # print(list_of_words_inputtwo)
+    #print(list_of_words_inputone)
+    #print(list_of_words_inputtwo)
     for word in list_of_words_inputone:
         if word not in dictionary_one:
             dictionary_one[word] = list_of_words_inputone.count(word)
@@ -56,6 +57,7 @@ def similarity(dict1, dict2):
             dictionary_two[word] = list_of_words_inputtwo.count(word)
     keys = set(list(dictionary_one.keys())+list(dictionary_two.keys()))
     frequency_words = {key:[0, 0] for key in keys}
+    #print(dictionary_one,dictionary_two)
     for key in dictionary_one:
         frequency_words[key][0] = dictionary_one[key]
     for key in dictionary_two:
