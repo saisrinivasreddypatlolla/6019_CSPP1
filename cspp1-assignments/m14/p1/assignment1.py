@@ -149,7 +149,7 @@ WORDLIST_FILENAME = 'words.txt'
 # Helper code End
 
 
-### Paste your implementation of the Message class here   
+### Paste your implementation of the Message class here
 
 def main():
     '''
