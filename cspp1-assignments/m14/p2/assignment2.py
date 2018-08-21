@@ -133,6 +133,7 @@ class Message(object):
 ### Paste your implementation of the `PlaintextMessage` class here
 
 class PlaintextMessage(Message):
+    ''' Grader's Implementation of PlaintextMessage Message '''
     def __init__(self, text, shift):
         '''
         Initializes a PlaintextMessage object
@@ -178,7 +179,7 @@ class PlaintextMessage(Message):
     def get_message_text_encrypted(self):
         '''
         Used to safely access self.message_text_encrypted outside of the class
-        
+
         Returns: self.message_text_encrypted
         '''
         return self.message_text_encrypted
