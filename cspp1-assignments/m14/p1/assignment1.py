@@ -60,8 +60,6 @@ def load_words(file_name):
     word_list = line.split()
     in_file.close()
     return word_list
-
-WORDLIST_FILENAME = 'words.txt'
 class Message(object):
     ''' Grader's Implementation of Message Object '''
 
@@ -147,11 +145,12 @@ class Message(object):
             else:
                 new_msg.append(self.build_shift_dict(shift)[i])
         return ''.join(new_msg)
+WORDLIST_FILENAME = 'words.txt'
 # Helper code End
 
 
 ### Paste your implementation of the Message class here
-
+        
 
 def main():
     '''
