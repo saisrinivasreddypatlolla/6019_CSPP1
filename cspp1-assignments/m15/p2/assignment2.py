@@ -71,6 +71,7 @@ class Message:
             self.message_text (string, determined by input text)
             self.valid_words (list, determined using helper function load_words
         '''
+        self.shift_dict = {}
         self.message_text = text
         self.valid_words = load_words("words.txt")
 
@@ -166,9 +167,9 @@ class PlaintextMessage(Message):
         self.text = text
         self.shift = shift
         self.valid_words = load_words("words.txt")
-        message = Message(text)
-        self.encrypting_dict = message.build_shift_dict(shift)
-        self.message_text_encrypted = message.apply_shift(shift)
+        Message.__init__(self, text)
+        self.encrypting_dict = self.build_shift_dict(shift)
+        self.message_text_encrypted = self.apply_shift(shift)
 
     ### DO NOT MODIFY THIS METHOD ###
     def get_shift(self):
@@ -210,9 +211,8 @@ class PlaintextMessage(Message):
         Returns: nothing
         '''
         self.shift = shift
-        message = Message(self.text)
-        self.encrypting_dict = message.build_shift_dict(shift)
-        self.message_text_encrypted = message.apply_shift(shift)
+        self.encrypting_dict = self.build_shift_dict(shift)
+        self.message_text_encrypted = self.apply_shift(shift)
 
 class CiphertextMessage(Message):
     ''' CiphertextMessage class '''
@@ -227,6 +227,7 @@ class CiphertextMessage(Message):
             self.valid_words (list, determined using helper function load_words)
         '''
         self.message_text = text
+        self.decrypted_message = ()
         self.valid_words = load_words("words.txt")[:]
         self.max_valid_words = 0
 
