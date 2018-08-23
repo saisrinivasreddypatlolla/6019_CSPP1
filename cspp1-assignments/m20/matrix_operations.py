@@ -39,8 +39,7 @@ def add_matrix(matrix1, matrix2):
                 add_matrix_row.append(matrix1[row][column]+matrix2[row][column])
             add_matrix.append(list(add_matrix_row))
         return add_matrix
-    print("Error: Matrix shapes invalid for addition")
-    return None
+    return "Error: Matrix shapes invalid for addition"
 
 
 def read_matrix():
