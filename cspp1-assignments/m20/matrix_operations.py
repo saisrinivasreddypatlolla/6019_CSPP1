@@ -12,7 +12,7 @@ def mult_matrix(m1, m2):
             mult_matrix_row = []
             for column in range(len(m2[0])):
                 mult_matrix_value = 0
-                for value in range(len(m2[0])):
+                for value in range(len(m2)):
                     mult_matrix_value += m1[row][value]*m2[value][column]
                 mult_matrix_row.append(mult_matrix_value)
             mult_matrix.append(mult_matrix_row)
