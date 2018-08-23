@@ -49,22 +49,30 @@ def read_matrix():
         print an error message and return None
         error message should be "Error: Invalid input for the matrix"
     '''
-    # matrix = []
+    matrix = []
     rows,columns = input().split(',')
-    matrix = [list(map(int, input().split())) for row in range(int(rows))]
+    for _ in range(int(rows)):
+        row = list(map(int, input().split()))
+        assert len(row) == int(columns)
+        matrix.append(row)
+    # matrix = [list(map(int, input().split())) for row in range(int(rows))]
     return matrix
 def main():
     # read matrix 1
-    matrix1 = read_matrix()
+    try:
+        matrix1 = read_matrix()
 
-    # read matrix 2
-    matrix2 = read_matrix()
+        # read matrix 2
+        matrix2 = read_matrix()
+    except:
+        print("Error: Invalid input for the matrix")
 
-    # add matrix 1 and matrix 2
-    print(add_matrix(matrix1, matrix2))
+    else:
+        # add matrix 1 and matrix 2
+        print(add_matrix(matrix1, matrix2))
 
-    # multiply matrix 1 and matrix 2
-    print(mult_matrix(matrix1, matrix2))
+        # multiply matrix 1 and matrix 2
+        print(mult_matrix(matrix1, matrix2))
 
 if __name__ == '__main__':
     main()
