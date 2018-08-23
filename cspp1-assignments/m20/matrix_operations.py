@@ -1,4 +1,5 @@
-'''This program is to take matrices as input and return addition and multiplication of two matrices'''
+'''This program is to take matrices as input and
+    return addition and multiplication of two matrices'''
 def mult_matrix(matrix1, matrix2):
     '''
         check if the matrix1 columns = matrix2 rows
