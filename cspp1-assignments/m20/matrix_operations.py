@@ -50,7 +50,7 @@ def read_matrix():
         error message should be "Error: Invalid input for the matrix"
     '''
     matrix = []
-    rows,columns = input().split(',')
+    rows, columns = input().split(',')
     for _ in range(int(rows)):
         row = list(map(int, input().split()))
         assert len(row) == int(columns)
@@ -64,7 +64,7 @@ def main():
 
         # read matrix 2
         matrix2 = read_matrix()
-    except:
+    except IOError:
         print("Error: Invalid input for the matrix")
 
     else:
