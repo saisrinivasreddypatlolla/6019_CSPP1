@@ -1,3 +1,4 @@
+'''This program is to take matrices as input and return addition and multiplication of two matrices'''
 def mult_matrix(matrix1, matrix2):
     '''
         check if the matrix1 columns = matrix2 rows
@@ -62,6 +63,12 @@ def read_matrix():
     # matrix = [list(map(int, input().split())) for row in range(int(rows))]
     return matrix
 def main():
+    '''
+        Initialisation of matrix
+        print addition of two matrices
+        print multiplication of two matrices
+    '''
+
     # read matrix 1
     try:
         matrix1 = read_matrix()
