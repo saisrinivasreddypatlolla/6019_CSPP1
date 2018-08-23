@@ -13,7 +13,7 @@ def mult_matrix(matrix1, matrix2):
     if len(matrix1[0]) == len(matrix2):
         for row in range(rows):
             mult_matrix_row = []
-            for column in range(column):
+            for column in range(columns):
                 mult_matrix_value = 0
                 for value in range(values):
                     mult_matrix_value += matrix1[row][value]*matrix2[value][column]
