@@ -6,13 +6,16 @@ def mult_matrix(matrix1, matrix2):
         and return None
         error message should be "Error: Matrix shapes invalid for mult"
     '''
+    rows = len(matrix1)
+    columns = len(matrix2[0])
+    values = len(matrix2)
     multiply_matrix = []
     if len(matrix1[0]) == len(matrix2):
-        for row in range(len(matrix1)):
+        for row in range(rows):
             mult_matrix_row = []
-            for column in range(len(matrix2[0])):
+            for column in range(column):
                 mult_matrix_value = 0
-                for value in range(len(matrix2)):
+                for value in range(values):
                     mult_matrix_value += matrix1[row][value]*matrix2[value][column]
                 mult_matrix_row.append(mult_matrix_value)
             multiply_matrix.append(mult_matrix_row)
