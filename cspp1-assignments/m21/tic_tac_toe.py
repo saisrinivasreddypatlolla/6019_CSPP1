@@ -31,7 +31,7 @@ def winner_of_game(game):
             final = 'o'
         else:
             final = "draw"
-        return final
+    return final
 
     if abs(counter['x']-counter['o']) == 0 or abs(counter['x']-counter['o']) > 1:
         return "invalid game"
