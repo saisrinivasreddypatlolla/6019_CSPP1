@@ -1,16 +1,16 @@
 from collections import Counter
-c = Counter()
 def winner_of_game(game):
+    counter = Counter()
     flag = 0
-    for i in game:
-        for j in i:
-            if j == 'x' or j == 'o' or j == ".":
-                c[j] += 1
-            elif j != 'x' and j != 'o' and j != ".":
+    for row in game:
+        for value in row:
+            if value in ('x', 'o', '.'):
+                counter[value] += 1
+            elif value not in ('x', 'o', '.'):
                 flag = 1
     if flag == 1:
         return "invalid input"
-    if abs(c['x']-c['o']) == 1:
+    if abs(counter['x']-counter['o']) == 1:
         if ((game[0][0] == 'x' and game[0][1] == 'x' and game[0][2] == 'x') or
                 (game[1][0] == 'x' and game[1][1] == 'x' and game[1][2] == 'x') or
                 (game[2][0] == 'x' and game[2][1] == 'x' and game[2][2] == 'x') or
@@ -31,7 +31,7 @@ def winner_of_game(game):
             return 'o'
         return "draw"
 
-    elif abs(c['x']-c['o']) == 0 or abs(c['x']-c['o']) > 1:
+    if abs(counter['x']-counter['o']) == 0 or abs(counter['x']-counter['o']) > 1:
         return "invalid game"
 def main():
     '''
@@ -42,7 +42,7 @@ def main():
 
     game = []
     for _ in range(3):
-        row = list(map(str,input().split()))
+        row = list(map(str, input().split()))
         game.append(row)
     print(winner_of_game(game))
 
