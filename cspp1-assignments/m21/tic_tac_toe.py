@@ -1,5 +1,9 @@
+''' This program is used to print the winner or the game by input values'''
 from collections import Counter
 def winner_of_game(game):
+    '''In this function we check the conditions and return winner
+        or return draw or invalid game
+    '''
     counter = Counter()
     flag = 0
     for row in game:
