@@ -28,7 +28,8 @@ def winner_of_game(game):
                 (game[0][2] == 'o' and game[1][2] == 'o' and game[2][2] == 'o') or
                 (game[0][0] == 'o' and game[1][1] == 'o' and game[2][2] == 'o') or
                 (game[0][2] == 'o' and game[1][1] == 'o' and game[2][0] == 'o')):
-        else:    final = 'o'
+            final = 'o'
+        else:
             final = "draw"
         return final
 
