@@ -19,7 +19,7 @@ def winner_of_game(game):
                 (game[0][2] == 'x' and game[1][2] == 'x' and game[2][2] == 'x') or
                 (game[0][0] == 'x' and game[1][1] == 'x' and game[2][2] == 'x') or
                 (game[0][2] == 'x' and game[1][1] == 'x' and game[2][0] == 'x')):
-            final = 'x'
+            return 'x'
         if ((game[0][0] == 'o' and game[0][1] == 'o' and game[0][2] == 'o') or
                 (game[1][0] == 'o' and game[1][1] == 'o' and game[1][2] == 'o') or
                 (game[2][0] == 'o' and game[2][1] == 'o' and game[2][2] == 'o') or
@@ -28,10 +28,8 @@ def winner_of_game(game):
                 (game[0][2] == 'o' and game[1][2] == 'o' and game[2][2] == 'o') or
                 (game[0][0] == 'o' and game[1][1] == 'o' and game[2][2] == 'o') or
                 (game[0][2] == 'o' and game[1][1] == 'o' and game[2][0] == 'o')):
-            final = 'o'
-        else:
-            final = "draw"
-    return final
+            return 'o'
+        return "draw"
 
     if abs(counter['x']-counter['o']) == 0 or abs(counter['x']-counter['o']) > 1:
         return "invalid game"
