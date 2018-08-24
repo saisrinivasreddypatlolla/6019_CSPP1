@@ -12,28 +12,27 @@ def winner_of_game(game):
         return "invalid input"
     if abs(c['x']-c['o']) == 1:
         if ((game[0][0] == 'x' and game[0][1] == 'x' and game[0][2] == 'x') or
-            (game[1][0] == 'x' and game[1][1] == 'x' and game[1][2] == 'x') or
-            (game[2][0] == 'x' and game[2][1] == 'x' and game[2][2] == 'x') or
-            (game[0][0] == 'x' and game[1][0] == 'x' and game[2][0] == 'x') or
-            (game[0][1] == 'x' and game[1][1] == 'x' and game[2][1] == 'x') or
-            (game[0][2] == 'x' and game[1][2] == 'x' and game[2][2] == 'x') or
-            (game[0][0] == 'x' and game[1][1] == 'x' and game[2][2] == 'x') or
-            (game[0][2] == 'x' and game[1][1] == 'x' and game[2][0] == 'x')):
+                (game[1][0] == 'x' and game[1][1] == 'x' and game[1][2] == 'x') or
+                (game[2][0] == 'x' and game[2][1] == 'x' and game[2][2] == 'x') or
+                (game[0][0] == 'x' and game[1][0] == 'x' and game[2][0] == 'x') or
+                (game[0][1] == 'x' and game[1][1] == 'x' and game[2][1] == 'x') or
+                (game[0][2] == 'x' and game[1][2] == 'x' and game[2][2] == 'x') or
+                (game[0][0] == 'x' and game[1][1] == 'x' and game[2][2] == 'x') or
+                (game[0][2] == 'x' and game[1][1] == 'x' and game[2][0] == 'x')):
             return 'x'
         if ((game[0][0] == 'o' and game[0][1] == 'o' and game[0][2] == 'o') or
-            (game[1][0] == 'o' and game[1][1] == 'o' and game[1][2] == 'o') or
-            (game[2][0] == 'o' and game[2][1] == 'o' and game[2][2] == 'o') or
-            (game[0][0] == 'o' and game[1][0] == 'o' and game[2][0] == 'o') or
-            (game[0][1] == 'o' and game[1][1] == 'o' and game[2][1] == 'o') or
-            (game[0][2] == 'o' and game[1][2] == 'o' and game[2][2] == 'o') or
-            (game[0][0] == 'o' and game[1][1] == 'o' and game[2][2] == 'o') or
-            (game[0][2] == 'o' and game[1][1] == 'o' and game[2][0] == 'o')):
+                (game[1][0] == 'o' and game[1][1] == 'o' and game[1][2] == 'o') or
+                (game[2][0] == 'o' and game[2][1] == 'o' and game[2][2] == 'o') or
+                (game[0][0] == 'o' and game[1][0] == 'o' and game[2][0] == 'o') or
+                (game[0][1] == 'o' and game[1][1] == 'o' and game[2][1] == 'o') or
+                (game[0][2] == 'o' and game[1][2] == 'o' and game[2][2] == 'o') or
+                (game[0][0] == 'o' and game[1][1] == 'o' and game[2][2] == 'o') or
+                (game[0][2] == 'o' and game[1][1] == 'o' and game[2][0] == 'o')):
             return 'o'
         return "draw"
 
     elif abs(c['x']-c['o']) == 0 or abs(c['x']-c['o']) > 1:
         return "invalid game"
-    return 
 def main():
     '''
         Initialisation of matrix
