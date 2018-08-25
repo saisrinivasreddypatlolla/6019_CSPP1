@@ -45,14 +45,6 @@ def check_sudoku(sudoku):
     if row_check(sudoku, list1) and column_check(sudoku, list1):
         return True
     return False
-    count = 0
-    for row in sudoku:
-        sort = sorted(row)
-        if list1 == sort:
-            count += 1
-        else:
-            return False
-    return count == len(sudoku)
 
 def main():
     '''
