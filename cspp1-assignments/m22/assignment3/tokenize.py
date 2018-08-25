@@ -18,7 +18,6 @@ def tokenize(string):
     counter = {}
     for line in list1:
         list2.append(line.split())
-    print(list2)
     for line in list2:
         for word in line:
             if word not in counter.keys():
