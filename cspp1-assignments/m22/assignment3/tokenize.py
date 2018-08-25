@@ -4,19 +4,19 @@ each word
 '''
 def tokenize(string):
     '''This function is used to return the dictionary contains words and its occurance'''
-    list2 = []
-    list1 = []
+    temp_list2 = []
+    temp_list1 = []
     characters = '";.,'
     for word in string:
         for char in characters:
             if char in word:
                 word = word.replace(char, '')
-        list1.append(word)
+        temp_list1.append(word)
 
     counter = {}
-    for line in list1:
-        list2.append(line.split())
-    for line in list2:
+    for line in temp_list1:
+        temp_list2.append(line.split())
+    for line in temp_list2:
         for word in line:
             if word not in counter.keys():
                 counter[word] = 0

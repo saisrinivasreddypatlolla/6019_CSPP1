@@ -13,15 +13,15 @@ def column_check(sudoku, list1):
     '''This fuction is used to check the columns and return boolean values'''
     count = 0
     length = len(sudoku)
-    list3 = []
+    temporary_list = []
     for column in range(length):
-        list2 = []
+        list_for _row = []
         for value in range(length):
-            list2.append(sudoku[value][column])
-        list3.append(list2)
-    for column in list3:
-        sort = sorted(column)
-        if list1 == sort:
+            list_for_row.append(sudoku[value][column])
+        temporary_list.append(list_for _row)
+    for column in temporary_list:
+        sorted_list = sorted(column)
+        if list1 == sorted_list:
             count += 1
         else:
             return False
@@ -31,8 +31,8 @@ def row_check(sudoku, list1):
     '''This function is used to check the rows and return bool value'''
     count = 0
     for row in sudoku:
-        sort = sorted(row)
-        if list1 == sort:
+        sorted_list = sorted(row)
+        if list1 == sorted_list:
             count += 1
         else:
             return False

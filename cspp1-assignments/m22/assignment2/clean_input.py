@@ -5,16 +5,16 @@ alphabets in both upper and lower case and numbers.
 
 def clean_string(string):
     '''This method used to clean up the strings'''
-    list1 = string.split()
+    list_ofwords = string.split()
     characters = "!@#$%^&*()."
-    list2 = []
-    for word in list1:
+    list_ofcleaned_words = []
+    for word in list_ofwords:
         #print(char)
         for char in characters:
             if char in word:
                 word = word.replace(char, '')
-        list2.append(word)
-    return ''.join(list2)
+        list_ofcleaned_words.append(word)
+    return ''.join(list_ofcleaned_words)
 
 def main():
     ''' This main function used to print the string without non alphabets
