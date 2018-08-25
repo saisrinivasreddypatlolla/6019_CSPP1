@@ -15,10 +15,10 @@ def column_check(sudoku, list1):
     length = len(sudoku)
     temporary_list = []
     for column in range(length):
-        list_for _row = []
+        list_for_row = []
         for value in range(length):
             list_for_row.append(sudoku[value][column])
-        temporary_list.append(list_for _row)
+        temporary_list.append(list_for_row)
     for column in temporary_list:
         sorted_list = sorted(column)
         if list1 == sorted_list:
