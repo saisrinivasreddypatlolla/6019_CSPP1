@@ -5,7 +5,7 @@ alphabets in both upper and lower case and numbers.
 
 def clean_string(string):
     list1 = string.split()
-    characters = "!@#$%^&*()"
+    characters = "!@#$%^&*()."
     list2 = []
     for word in list1:
         #print(char)
