@@ -7,10 +7,6 @@
     Complete the check_sudoku function to check if the given grid
     satisfies all the sudoku rules given in the statement above.
 '''
-# def grid_check(sudoku, list1):
-#     list2 = []
-#     for row in range(3):
-#         for column in range(3):
 
 
 def column_check(sudoku, list1):
@@ -46,7 +42,7 @@ def check_sudoku(sudoku):
         The function has to return True for a valid sudoku grid and false otherwise
     '''
     list1 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-    if row_check(sudoku, list1) and column_check(sudoku, list1):# and grid_check(sudoku, list1):
+    if row_check(sudoku, list1) and column_check(sudoku, list1):
         return True
     return False
     count = 0
