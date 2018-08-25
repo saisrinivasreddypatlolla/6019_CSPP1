@@ -10,6 +10,7 @@
 
 
 def column_check(sudoku, list1):
+    '''This fuction is used to check the columns and return boolean values'''
     count = 0
     length = len(sudoku)
     list3 = []
@@ -27,6 +28,7 @@ def column_check(sudoku, list1):
     return count == len(sudoku)
 
 def row_check(sudoku, list1):
+    '''This function is used to check the rows and return bool value'''
     count = 0
     for row in sudoku:
         sort = sorted(row)
@@ -51,12 +53,11 @@ def main():
         main function to read input sudoku from console
         call check_sudoku function and print the result to console
     '''
-    
     # initialize empty list
     sudoku = []
 
     # loop to read 9 lines of input from console
-    for i in range(9):
+    for _ in range(9):
         # read a line, split it on SPACE and append row to list
         row = list(map(int, input().split(' ')))
         sudoku.append(row)
