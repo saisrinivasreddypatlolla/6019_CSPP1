@@ -7,14 +7,14 @@ def clean_string(string):
     '''This method used to clean up the strings'''
     list_ofwords = string.split()
     characters = "!@#$%^&*()."
-    list_ofcleaned_words = []
+    cleaned_words = []
     for word in list_ofwords:
         #print(char)
         for char in characters:
             if char in word:
                 word = word.replace(char, '')
-        list_ofcleaned_words.append(word)
-    return ''.join(list_ofcleaned_words)
+        cleaned_words.append(word)
+    return ''.join(cleaned_words)
 
 def main():
     ''' This main function used to print the string without non alphabets
