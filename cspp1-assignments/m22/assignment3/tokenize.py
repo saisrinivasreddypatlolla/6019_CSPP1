@@ -22,7 +22,6 @@ def tokenize(string):
                 counter[word] = 0
             counter[word] += 1
     return counter
-            
 def main():
     '''This main function print the dictionary which has words and its occurance
         in the given sentence'''
