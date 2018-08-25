@@ -2,18 +2,16 @@
 Write a function to tokenize a given string and return a dictionary with the frequency of
 each word
 '''
-from collections import Counter
 def tokenize(string):
-    list2 =[]
+    '''This function is used to return the dictionary contains words and its occurance'''
+    list2 = []
     list1 = []
     characters = '";.,'
     for word in string:
-        #print(char)
         for char in characters:
             if char in word:
                 word = word.replace(char, '')
         list1.append(word)
-    # print(list1.split())
 
     counter = {}
     for line in list1:
@@ -26,6 +24,8 @@ def tokenize(string):
     return counter
             
 def main():
+    '''This main function print the dictionary which has words and its occurance
+        in the given sentence'''
     list1 = []
     number = int(input())
     for _ in range(number):
