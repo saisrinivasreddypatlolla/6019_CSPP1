@@ -6,8 +6,8 @@ the key and frequency with a SPACE - SPACE.
 
 def print_dictionary(dictionary):
     '''This function is used to print the sorted order of given words with frequency'''
-    sorted_list = sorted(dictionary.keys())
-    for word in sorted_list:
+    sort_list = sorted(dictionary.keys())
+    for word in sort_list:
         print(word, "-", dictionary[word])
 
 def main():
