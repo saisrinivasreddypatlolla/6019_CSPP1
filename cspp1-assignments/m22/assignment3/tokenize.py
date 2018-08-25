@@ -13,11 +13,16 @@ def tokenize(string):
             if char in word:
                 word = word.replace(char, '')
         list1.append(word)
-    counter = Counter()
+    # print(list1.split())
+
+    counter = {}
     for line in list1:
         list2.append(line.split())
+    print(list2)
     for line in list2:
         for word in line:
+            if word not in counter.keys():
+                counter[word] = 0
             counter[word] += 1
     return counter
             
